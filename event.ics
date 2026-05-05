@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Drozda Nářadí//Milwaukee Tour 2026//CS
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Prague:20260602T090000
+DTEND;TZID=Europe/Prague:20260602T150000
+SUMMARY:Drozda Nářadí – Milwaukee Tour 2026
+LOCATION:Masarykova 1483\, Rudná u Prahy
+DESCRIPTION:Pozvánka Milwaukee Tour 2026 – Drozda Nářadí\n\n✅ Akční slevy na vše\n🔥 Občerstvení na grilu\n🏆 Soutěže\n⚙️ Demo strojů\n🆕 Představení novinek\n\nNavigace: https://maps.app.goo.gl/o71frimCr7zuTNsj7
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

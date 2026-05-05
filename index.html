@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Milwaukee Tour 2026 – Drozda Nářadí</title>
+  <meta name="description" content="Drozda Nářadí – Milwaukee Tour 2026. Úterý 2. 6. 2026, 9:00–15:00, Masarykova 1483, Rudná u Prahy." />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #111;
+      color: #fff;
+      min-height: 100vh;
+    }
+
+    /* ── TOP HEADER ── */
+    .header {
+      background: #E31837;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .header-logo {
+      font-size: 1.5rem;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      color: #fff;
+      line-height: 1;
+    }
+    .header-logo span {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: 0.85;
+    }
+
+    /* ── FLYER AREA ── */
+    .flyer-wrap {
+      background: #1a1a1a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 28px 20px;
+    }
+    .flyer-wrap img {
+      max-width: 100%;
+      max-height: 520px;
+      border-radius: 10px;
+      display: block;
+    }
+    .flyer-placeholder {
+      width: 100%;
+      max-width: 480px;
+      aspect-ratio: 3/4;
+      border: 2px dashed #444;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: #555;
+      font-size: 0.95rem;
+    }
+    .flyer-placeholder svg { opacity: 0.4; }
+
+    /* ── EVENT INFO ── */
+    .info-card {
+      background: #1e1e1e;
+      border-top: 3px solid #E31837;
+      padding: 28px 24px 20px;
+    }
+    .event-title {
+      font-size: 1.55rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+    .event-title em {
+      color: #E31837;
+      font-style: normal;
+    }
+
+    .detail-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 13px;
+      font-size: 1rem;
+      color: #ccc;
+    }
+    .detail-row svg {
+      flex-shrink: 0;
+      margin-top: 2px;
+      color: #E31837;
+    }
+    .detail-row strong {
+      color: #fff;
+      display: block;
+      font-size: 1.05rem;
+    }
+
+    /* ── CALENDAR BUTTONS ── */
+    .calendar-section {
+      padding: 28px 24px 40px;
+    }
+    .section-label {
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 16px;
+    }
+
+    .btn-calendar {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      width: 100%;
+      padding: 16px 20px;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      margin-bottom: 12px;
+      transition: filter 0.15s, transform 0.1s;
+      color: #fff;
+    }
+    .btn-calendar:active { transform: scale(0.98); }
+    .btn-calendar:hover  { filter: brightness(1.1); }
+
+    .btn-google  { background: #4285F4; }
+    .btn-apple   { background: #2d2d2d; border: 1px solid #444; }
+    .btn-outlook { background: #0072C6; }
+    .btn-other   { background: #333; border: 1px solid #555; }
+
+    .btn-calendar .btn-icon {
+      width: 36px;
+      height: 36px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .btn-calendar .btn-text { text-align: left; line-height: 1.2; }
+    .btn-calendar .btn-sub  { font-size: 0.78rem; font-weight: 400; opacity: 0.75; display: block; margin-top: 2px; }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.78rem;
+      color: #555;
+      border-top: 1px solid #222;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-logo">
+      DROZDA NÁŘADÍ
+      <span>presents</span>
+    </div>
+    <div style="margin-left:auto; font-size:0.85rem; opacity:0.85; font-weight:600;">Milwaukee Tour 2026</div>
+  </div>
+
+  <!-- LETAK -->
+  <div class="flyer-wrap">
+    <img src="letak.jpg" alt="Pozvánka – Milwaukee Tour 2026, Drozda Nářadí" />
+  </div>
+
+  <!-- INFO -->
+  <div class="info-card">
+    <div class="event-title">Drozda Nářadí<br/><em>Milwaukee Tour 2026</em></div>
+
+    <div class="detail-row">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/>
+        <line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+      </svg>
+      <div>
+        <strong>Úterý 2. června 2026</strong>
+        9:00 – 15:00
+      </div>
+    </div>
+
+    <div class="detail-row">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+      </svg>
+      <div>
+        <strong>Masarykova 1483</strong>
+        Rudná u Prahy
+        <a href="https://maps.app.goo.gl/o71frimCr7zuTNsj7" target="_blank" rel="noopener"
+           style="display:inline-block;margin-top:6px;font-size:0.82rem;color:#E31837;text-decoration:none;font-weight:600;">
+          📍 Otevřít v Mapách →
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- CALENDAR BUTTONS -->
+  <div class="calendar-section">
+    <div class="section-label">Přidat do kalendáře</div>
+
+    <!-- GOOGLE CALENDAR -->
+    <a class="btn-calendar btn-google"
+       href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Drozda+N%C3%A1%C5%99ad%C3%AD+%E2%80%93+Milwaukee+Tour+2026&dates=20260602T090000/20260602T150000&details=%E2%9C%85+Akn%C3%AD+slevy+na+v%C5%A1e%0A%F0%9F%94%A5+Ob%C4%8Derstven%C3%AD+na+grilu%0A%F0%9F%8F%86+Sout%C4%9B%C5%BEe%0A%E2%9A%99%EF%B8%8F+Demo+stroj%C5%AF%0A%F0%9F%86%95+P%C5%99edstaven%C3%AD+novinek%0A%0ANavigace%3A+https%3A%2F%2Fmaps.app.goo.gl%2Fo71frimCr7zuTNsj7&location=Masarykova+1483%2C+Rudn%C3%A1+u+Prahy&ctz=Europe%2FPrague"
+       target="_blank" rel="noopener">
+      <div class="btn-icon">
+        <svg width="28" height="28" viewBox="0 0 48 48"><path fill="#fff" d="M24 4C13 4 4 13 4 24s9 20 20 20 20-9 20-20S35 4 24 4z" opacity=".15"/><text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle" font-size="20" font-weight="bold" fill="#fff">G</text></svg>
+      </div>
+      <div class="btn-text">
+        Google Kalendář
+        <span class="btn-sub">Otevře se v prohlížeči</span>
+      </div>
+    </a>
+
+    <!-- APPLE / iCAL -->
+    <a class="btn-calendar btn-apple" href="event.ics">
+      <div class="btn-icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8">
+          <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+        </svg>
+      </div>
+      <div class="btn-text">
+        Apple Kalendář
+        <span class="btn-sub">iPhone, iPad, Mac</span>
+      </div>
+    </a>
+
+    <!-- OUTLOOK -->
+    <a class="btn-calendar btn-outlook"
+       href="https://outlook.live.com/calendar/0/deeplink/compose?subject=Drozda+N%C3%A1%C5%99ad%C3%AD+%E2%80%93+Milwaukee+Tour+2026&startdt=2026-06-02T09%3A00%3A00&enddt=2026-06-02T15%3A00%3A00&body=%E2%9C%85+Akn%C3%AD+slevy+na+v%C5%A1e%0A%F0%9F%94%A5+Ob%C4%8Derstven%C3%AD+na+grilu%0A%F0%9F%8F%86+Sout%C4%9B%C5%BEe%0A%E2%9A%99%EF%B8%8F+Demo+stroj%C5%AF%0A%F0%9F%86%95+P%C5%99edstaven%C3%AD+novinek%0A%0ANavigace%3A+https%3A%2F%2Fmaps.app.goo.gl%2Fo71frimCr7zuTNsj7&location=Masarykova+1483%2C+Rudn%C3%A1+u+Prahy"
+       target="_blank" rel="noopener">
+      <div class="btn-icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8">
+          <rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/>
+        </svg>
+      </div>
+      <div class="btn-text">
+        Outlook Kalendář
+        <span class="btn-sub">Outlook.com / Office 365</span>
+      </div>
+    </a>
+
+    <!-- OTHER (ICS download) -->
+    <a class="btn-calendar btn-other" href="event.ics" download="milwaukee-tour-2026.ics">
+      <div class="btn-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="1.8">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+      </div>
+      <div class="btn-text" style="color:#aaa">
+        Jiný kalendář
+        <span class="btn-sub">Stáhnout .ics soubor</span>
+      </div>
+    </a>
+
+  </div>
+
+  <footer>
+    © 2026 Drozda Nářadí &nbsp;·&nbsp; <a href="https://eshop-rychle.cz" style="color:#555">eshop-rychle.cz</a>
+  </footer>
+
+</body>
+</html>
