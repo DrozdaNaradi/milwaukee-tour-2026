@@ -1,327 +1,428 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Milwaukee Tour 2026 – Drozda Nářadí</title>
-  <meta name="description" content="Drozda Nářadí – Milwaukee Tour 2026. Úterý 2. 6. 2026, 9:00–15:00, Masarykova 1483, Rudná u Prahy." />
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Milwaukee Tour 2026 – Drozda Nářadí</title>
+<meta name="description" content="Drozda Nářadí – Milwaukee Tour 2026. Úterý 2. 6. 2026, 9:00–15:00, Masarykova 1483, Rudná u Prahy." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0b0b0d;
+    --surface: #161618;
+    --surface-2: #1d1d20;
+    --line: rgba(255, 255, 255, 0.08);
+    --line-strong: rgba(255, 255, 255, 0.14);
+    --text: #f5f5f7;
+    --text-2: #a1a1a6;
+    --text-3: #6e6e73;
+    --red: #e4002b;
+    --radius: 18px;
+  }
 
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: #111;
-      color: #fff;
-      min-height: 100vh;
-    }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    /* ── HEADER ── */
-    .header {
-      background: #E31837;
-      padding: 16px 24px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
+  html, body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.5;
+  }
+
+  body { min-height: 100vh; }
+
+  /* Top bar */
+  .topbar {
+    border-bottom: 1px solid var(--line);
+    background: rgba(11, 11, 13, 0.85);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+
+  .topbar-inner {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .brand {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--text);
+  }
+
+  .brand span {
+    color: var(--text-3);
+    font-weight: 500;
+    margin-left: 8px;
+  }
+
+  .topbar-tag {
+    font-size: 13px;
+    color: var(--text-2);
+    font-weight: 500;
+  }
+
+  /* Main */
+  .container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 56px 24px 80px;
+  }
+
+  /* Hero */
+  .hero {
+    text-align: left;
+    margin-bottom: 48px;
+  }
+
+  .hero-date {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--red);
+    letter-spacing: 0.02em;
+    margin-bottom: 14px;
+  }
+
+  .hero h1 {
+    font-size: clamp(34px, 5vw, 56px);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    line-height: 1.05;
+    margin-bottom: 14px;
+  }
+
+  .hero p {
+    font-size: 17px;
+    color: var(--text-2);
+    max-width: 560px;
+  }
+
+  /* Layout */
+  .grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 24px;
+    align-items: start;
+  }
+
+  /* Poster */
+  .poster {
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    aspect-ratio: 4 / 5;
+    position: relative;
+  }
+
+  .poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Right side */
+  .stack {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  /* Event info — flat list, no card */
+  .event-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .event-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .event-row:last-child { border-bottom: none; }
+  .event-row:first-child { padding-top: 0; }
+
+  .row-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    display: grid;
+    place-items: center;
+    color: var(--text-2);
+    flex-shrink: 0;
+  }
+
+  .row-content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .row-label {
+    font-size: 12px;
+    color: var(--text-3);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    margin-bottom: 4px;
+  }
+
+  .row-value {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: -0.01em;
+    line-height: 1.35;
+  }
+
+  .row-sub {
+    font-size: 14px;
+    color: var(--text-2);
+    margin-top: 2px;
+  }
+
+  .row-link {
+    display: inline-block;
+    font-size: 13px;
+    color: var(--red);
+    text-decoration: none;
+    margin-top: 6px;
+    font-weight: 500;
+  }
+
+  .row-link:hover { text-decoration: underline; }
+
+  /* Calendar section */
+  .section-title {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-3);
+    margin-bottom: 12px;
+  }
+
+  .cal-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .cal-btn {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px;
+    border-radius: 12px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    color: var(--text);
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+  }
+
+  .cal-btn:hover {
+    background: var(--surface-2);
+    border-color: var(--line-strong);
+  }
+
+  .cal-icon {
+    width: 28px;
+    height: 28px;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    color: var(--text-2);
+  }
+
+  .cal-name {
+    flex: 1;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text);
+    letter-spacing: -0.01em;
+  }
+
+  .cal-arrow {
+    color: var(--text-3);
+    flex-shrink: 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 760px) {
+    .grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
     }
-    .header-inner {
-      max-width: 1100px;
+    .container { padding: 40px 20px 64px; }
+    .hero { margin-bottom: 36px; }
+    .poster {
+      aspect-ratio: 3 / 4;
+      max-width: 480px;
       margin: 0 auto;
       width: 100%;
-      display: flex;
-      align-items: center;
     }
-    .header-logo {
-      font-size: 1.4rem;
-      font-weight: 900;
-      color: #fff;
-      line-height: 1;
-    }
-    .header-logo span {
-      display: block;
-      font-size: 0.7rem;
-      font-weight: 400;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      opacity: 0.85;
-    }
-    .header-tour {
-      margin-left: auto;
-      font-size: 0.85rem;
-      opacity: 0.85;
-      font-weight: 600;
-    }
+  }
 
-    /* ── MAIN CONTAINER ── */
-    .page-wrap {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 32px 20px 48px;
-    }
-
-    /* ── DESKTOP LAYOUT: dvě sloupce ── */
-    .main-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: start;
-    }
-
-    /* ── LETAK ── */
-    .flyer-col img {
-      width: 100%;
-      border-radius: 12px;
-      display: block;
-    }
-
-    /* ── PRAVÝ SLOUPEC ── */
-    .info-col {
-      display: flex;
-      flex-direction: column;
-      gap: 28px;
-    }
-
-    /* ── EVENT INFO ── */
-    .info-card {
-      background: #1e1e1e;
-      border-radius: 14px;
-      border-left: 4px solid #E31837;
-      padding: 24px 22px;
-    }
-    .event-title {
-      font-size: 1.5rem;
-      font-weight: 800;
-      line-height: 1.2;
-      margin-bottom: 20px;
-    }
-    .event-title em {
-      color: #E31837;
-      font-style: normal;
-    }
-    .detail-row {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      margin-bottom: 14px;
-      font-size: 0.97rem;
-      color: #ccc;
-    }
-    .detail-row svg {
-      flex-shrink: 0;
-      margin-top: 2px;
-      color: #E31837;
-    }
-    .detail-row strong {
-      color: #fff;
-      display: block;
-      font-size: 1rem;
-    }
-    .maps-link {
-      display: inline-block;
-      margin-top: 6px;
-      font-size: 0.82rem;
-      color: #E31837;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .maps-link:hover { text-decoration: underline; }
-
-    /* ── CALENDAR SECTION ── */
-    .calendar-card {
-      background: #1e1e1e;
-      border-radius: 14px;
-      padding: 22px;
-    }
-    .section-label {
-      font-size: 0.7rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: #888;
-      margin-bottom: 14px;
-    }
-
-    .btn-calendar {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      width: 100%;
-      padding: 14px 18px;
-      border-radius: 10px;
-      border: none;
-      cursor: pointer;
-      font-size: 0.97rem;
-      font-weight: 600;
-      text-decoration: none;
-      margin-bottom: 10px;
-      transition: filter 0.15s, transform 0.1s;
-      color: #fff;
-    }
-    .btn-calendar:last-child { margin-bottom: 0; }
-    .btn-calendar:active { transform: scale(0.98); }
-    .btn-calendar:hover  { filter: brightness(1.12); }
-
-    .btn-google  { background: #4285F4; }
-    .btn-apple   { background: #2d2d2d; border: 1px solid #444; }
-    .btn-outlook { background: #0072C6; }
-    .btn-other   { background: #292929; border: 1px solid #444; }
-
-    .btn-icon {
-      width: 34px;
-      height: 34px;
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .btn-text { text-align: left; line-height: 1.2; }
-    .btn-sub  { font-size: 0.75rem; font-weight: 400; opacity: 0.7; display: block; margin-top: 2px; }
-
-    /* ── FOOTER ── */
-    footer {
-      text-align: center;
-      padding: 24px 20px;
-      font-size: 0.78rem;
-      color: #444;
-      border-top: 1px solid #1e1e1e;
-      margin-top: 20px;
-    }
-    footer a { color: #555; text-decoration: none; }
-    footer a:hover { color: #E31837; }
-
-    /* ── MOBILE: jeden sloupec ── */
-    @media (max-width: 700px) {
-      .page-wrap { padding: 20px 16px 40px; }
-      .main-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-      .event-title { font-size: 1.3rem; }
-      .btn-calendar { padding: 15px 16px; }
-    }
-  </style>
+  @media (max-width: 480px) {
+    .topbar-inner { padding: 14px 20px; }
+    .topbar-tag { font-size: 12px; }
+  }
+</style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <div class="header">
-    <div class="header-inner">
-      <div class="header-logo">
-        DROZDA NÁŘADÍ
-        <span>presents</span>
-      </div>
-      <div class="header-tour">Milwaukee Tour 2026</div>
-    </div>
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">Drozda Nářadí <span>Presents</span></div>
+    <div class="topbar-tag">Milwaukee Tour 2026</div>
   </div>
+</header>
 
-  <!-- MAIN -->
-  <div class="page-wrap">
-    <div class="main-grid">
+<main class="container">
 
-      <!-- LETAK -->
-      <div class="flyer-col">
-        <img src="letak.jpg" alt="Pozvánka – Milwaukee Tour 2026, Drozda Nářadí" />
-      </div>
+  <section class="hero">
+    <div class="hero-date">Úterý 2. června 2026</div>
+    <h1>Milwaukee Tour 2026</h1>
+    <p>Akční slevy, demo strojů, představení novinek a občerstvení na grilu.</p>
+  </section>
 
-      <!-- PRAVÝ SLOUPEC -->
-      <div class="info-col">
+  <div class="grid">
 
-        <!-- INFO KARTA -->
-        <div class="info-card">
-          <div class="event-title">Drozda Nářadí<br/><em>Milwaukee Tour 2026</em></div>
+    <!-- Poster -->
+    <div class="poster">
+      <img src="letak.jpg" alt="Pozvánka – Milwaukee Tour 2026, Drozda Nářadí" />
+    </div>
 
-          <div class="detail-row">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="3" y="4" width="18" height="18" rx="2"/>
-              <line x1="16" y1="2" x2="16" y2="6"/>
-              <line x1="8" y1="2" x2="8" y2="6"/>
-              <line x1="3" y1="10" x2="21" y2="10"/>
-            </svg>
-            <div>
-              <strong>Úterý 2. června 2026</strong>
-              9:00 – 15:00
+    <!-- Right column -->
+    <div class="stack">
+
+      <!-- Event details -->
+      <section>
+        <div class="event-list">
+
+          <div class="event-row">
+            <div class="row-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+              </svg>
+            </div>
+            <div class="row-content">
+              <div class="row-label">Kdy</div>
+              <div class="row-value">Úterý 2. června 2026</div>
+              <div class="row-sub">9:00 – 15:00</div>
             </div>
           </div>
 
-          <div class="detail-row">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/>
-              <circle cx="12" cy="10" r="3"/>
-            </svg>
-            <div>
-              <strong>Masarykova 1483</strong>
-              Rudná u Prahy
-              <a class="maps-link" href="https://maps.app.goo.gl/o71frimCr7zuTNsj7" target="_blank" rel="noopener">
-                📍 Otevřít v Mapách →
-              </a>
+          <div class="event-row">
+            <div class="row-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </div>
+            <div class="row-content">
+              <div class="row-label">Kde</div>
+              <div class="row-value">Masarykova 1483</div>
+              <div class="row-sub">Rudná u Prahy</div>
+              <a href="https://maps.app.goo.gl/o71frimCr7zuTNsj7" target="_blank" rel="noopener" class="row-link">Otevřít v Mapách →</a>
             </div>
           </div>
+
         </div>
+      </section>
 
-        <!-- KALENDÁŘ -->
-        <div class="calendar-card">
-          <div class="section-label">Přidat do kalendáře</div>
+      <!-- Calendar -->
+      <section>
+        <div class="section-title">Přidat do kalendáře</div>
+        <div class="cal-list">
 
-          <a class="btn-calendar btn-google"
+          <a class="cal-btn"
              href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Drozda+N%C3%A1%C5%99ad%C3%AD+%E2%80%93+Milwaukee+Tour+2026&dates=20260602T090000/20260602T150000&details=%E2%9C%85+Akn%C3%AD+slevy+na+v%C5%A1e%0A%F0%9F%94%A5+Ob%C4%8Derstven%C3%AD+na+grilu%0A%F0%9F%8F%86+Sout%C4%9B%C5%BEe%0A%E2%9A%99%EF%B8%8F+Demo+stroj%C5%AF%0A%F0%9F%86%95+P%C5%99edstaven%C3%AD+novinek%0A%0ANavigace%3A+https%3A%2F%2Fmaps.app.goo.gl%2Fo71frimCr7zuTNsj7&location=Masarykova+1483%2C+Rudn%C3%A1+u+Prahy&ctz=Europe%2FPrague"
              target="_blank" rel="noopener">
-            <div class="btn-icon">
-              <svg width="26" height="26" viewBox="0 0 48 48"><path fill="#fff" d="M24 4C13 4 4 13 4 24s9 20 20 20 20-9 20-20S35 4 24 4z" opacity=".15"/><text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle" font-size="20" font-weight="bold" fill="#fff">G</text></svg>
-            </div>
-            <div class="btn-text">
-              Google Kalendář
-              <span class="btn-sub">Otevře se v prohlížeči</span>
-            </div>
-          </a>
-
-          <a class="btn-calendar btn-apple" href="event.ics">
-            <div class="btn-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8">
-                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+            <div class="cal-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
               </svg>
             </div>
-            <div class="btn-text">
-              Apple Kalendář
-              <span class="btn-sub">iPhone, iPad, Mac</span>
-            </div>
+            <div class="cal-name">Google Kalendář</div>
+            <svg class="cal-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"/>
+            </svg>
           </a>
 
-          <a class="btn-calendar btn-outlook"
+          <a class="cal-btn" href="event.ics">
+            <div class="cal-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.05 20.28c-.98.95-2.05.94-3.08.45-1.09-.5-2.08-.5-3.2 0-1.39.6-2.18.5-3.05-.45C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+              </svg>
+            </div>
+            <div class="cal-name">Apple Kalendář</div>
+            <svg class="cal-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"/>
+            </svg>
+          </a>
+
+          <a class="cal-btn"
              href="https://outlook.live.com/calendar/0/deeplink/compose?subject=Drozda+N%C3%A1%C5%99ad%C3%AD+%E2%80%93+Milwaukee+Tour+2026&startdt=2026-06-02T09%3A00%3A00&enddt=2026-06-02T15%3A00%3A00&body=%E2%9C%85+Akn%C3%AD+slevy+na+v%C5%A1e%0A%F0%9F%94%A5+Ob%C4%8Derstven%C3%AD+na+grilu%0A%F0%9F%8F%86+Sout%C4%9B%C5%BEe%0A%E2%9A%99%EF%B8%8F+Demo+stroj%C5%AF%0A%F0%9F%86%95+P%C5%99edstaven%C3%AD+novinek%0A%0ANavigace%3A+https%3A%2F%2Fmaps.app.goo.gl%2Fo71frimCr7zuTNsj7&location=Masarykova+1483%2C+Rudn%C3%A1+u+Prahy"
              target="_blank" rel="noopener">
-            <div class="btn-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8">
-                <rect x="2" y="4" width="20" height="16" rx="2"/>
-                <polyline points="2,4 12,13 22,4"/>
+            <div class="cal-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
               </svg>
             </div>
-            <div class="btn-text">
-              Outlook Kalendář
-              <span class="btn-sub">Outlook.com / Office 365</span>
-            </div>
+            <div class="cal-name">Outlook Kalendář</div>
+            <svg class="cal-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"/>
+            </svg>
           </a>
 
-          <a class="btn-calendar btn-other" href="event.ics" download="milwaukee-tour-2026.ics">
-            <div class="btn-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="1.8">
+          <a class="cal-btn" href="event.ics" download="milwaukee-tour-2026.ics">
+            <div class="cal-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
                 <polyline points="7 10 12 15 17 10"/>
                 <line x1="12" y1="15" x2="12" y2="3"/>
               </svg>
             </div>
-            <div class="btn-text" style="color:#999">
-              Jiný kalendář
-              <span class="btn-sub">Stáhnout .ics soubor</span>
-            </div>
+            <div class="cal-name">Stáhnout .ics</div>
+            <svg class="cal-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"/>
+            </svg>
           </a>
-        </div>
 
-      </div>
+        </div>
+      </section>
+
     </div>
+
   </div>
 
-  <footer>
-    © 2026 Drozda Nářadí &nbsp;·&nbsp;
-    <a href="https://www.drozda-naradi.cz" target="_blank" rel="noopener">drozda-naradi.cz</a>
-  </footer>
+</main>
 
 </body>
 </html>
