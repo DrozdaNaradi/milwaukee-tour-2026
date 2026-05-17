@@ -10,14 +10,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0b0b0d;
-    --surface: #161618;
-    --surface-2: #1d1d20;
-    --line: rgba(255, 255, 255, 0.08);
-    --line-strong: rgba(255, 255, 255, 0.14);
-    --text: #f5f5f7;
-    --text-2: #a1a1a6;
-    --text-3: #6e6e73;
+    --bg: #f5f5f7;
+    --surface: #ffffff;
+    --surface-2: #ebebed;
+    --line: rgba(0, 0, 0, 0.08);
+    --line-strong: rgba(0, 0, 0, 0.14);
+    --text: #1d1d1f;
+    --text-2: #6e6e73;
+    --text-3: #a1a1a6;
     --red: #e4002b;
     --radius: 18px;
   }
@@ -38,7 +38,7 @@
   /* Top bar */
   .topbar {
     border-bottom: 1px solid var(--line);
-    background: rgba(11, 11, 13, 0.85);
+    background: rgba(245, 245, 247, 0.85);
     backdrop-filter: saturate(180%) blur(20px);
     -webkit-backdrop-filter: saturate(180%) blur(20px);
     position: sticky;
@@ -121,16 +121,16 @@
   .poster {
     border-radius: var(--radius);
     overflow: hidden;
-    background: var(--surface);
+    background: #ffffff;
     border: 1px solid var(--line);
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 1747 / 2480;
     position: relative;
   }
 
   .poster img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     display: block;
   }
 
@@ -141,7 +141,7 @@
     gap: 24px;
   }
 
-  /* Event info — flat list, no card */
+  /* Event info */
   .event-list {
     display: flex;
     flex-direction: column;
@@ -274,8 +274,7 @@
     .container { padding: 40px 20px 64px; }
     .hero { margin-bottom: 36px; }
     .poster {
-      aspect-ratio: 3 / 4;
-      max-width: 480px;
+      max-width: 420px;
       margin: 0 auto;
       width: 100%;
     }
@@ -308,7 +307,7 @@
 
     <!-- Poster -->
     <div class="poster">
-      <img src="letak.jpg" alt="Pozvánka – Milwaukee Tour 2026, Drozda Nářadí" />
+      <img src="letak.png" alt="Pozvánka – Milwaukee Tour 2026, Drozda Nářadí" />
     </div>
 
     <!-- Right column -->
@@ -355,7 +354,7 @@
       <!-- Akční sestavy -->
       <section>
         <div class="section-title">Speciální nabídka</div>
-        <a class="cal-btn" href="https://drozdanaradi.github.io/akcni-sestavy/" target="_blank" rel="noopener" style="border-color: rgba(228,0,43,0.3);">
+        <a class="cal-btn" href="https://drozdanaradi.github.io/akcni-sestavy/" target="_blank" rel="noopener" style="border-color: rgba(228,0,43,0.25);">
           <div class="cal-icon" style="color: var(--red);">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <polyline points="20 12 20 22 4 22 4 12"/>
